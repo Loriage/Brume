@@ -20,8 +20,11 @@
         "body-parser": "^1.18.3",
         "cli-color": "^2.0.0",
         "dotenv": "^6.2.0",
+        "dropbox": "^4.0.30",
         "express": "^4.17.1",
         "jsonwebtoken": "^8.5.1",
-        "mongoose": "^5.9.4"
+        "mongoose": "^5.9.4",
+        "passport-adobe-oauth2": "^1.0.1",
+        "passport-dropbox-oauth2": "^1.1.0"
     }
 }
