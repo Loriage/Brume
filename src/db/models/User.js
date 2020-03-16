@@ -7,7 +7,14 @@ const UserSchema = new Schema({
 	username: { type: String },
 	email: { type: String },
     password: { type: String },
-    dropboxId: { type: String },
+    dropbox: [{
+        accountId: {
+            type: String,
+        },
+        accessToken: {
+            type: String,
+        },
+    }],
 })
 
 // Export model
