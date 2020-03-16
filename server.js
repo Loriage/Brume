@@ -39,5 +39,5 @@ app.use('/register', register)
 // Listen for the server at a port.
 app.listen(process.env.PORT || 8000, (err) => {
     console.log(clc.green('Welcome here!'))
-    console.log(clc.blue('Server running on ') + clc.red(8000))
+    console.log(clc.yellow('Server running on ') + clc.blue(8000))
 })

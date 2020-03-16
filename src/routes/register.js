@@ -20,14 +20,17 @@ router.post('/', (req, res, next) => {
 	const reg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/
 
 	if ( email === '' || email == null || !reg.test(email) ) {
+        console.log(clc.red('Email error.'))
 		res.status(422).json({
 			'error': 'emailError'
 		}).end()
 	} else if ( password == null || password.length < 6 ) {
+        console.log(clc.red('Password error.'))
 		res.status(422).json({
 			'error': 'passwordError'
 		}).end()
 	} else if ( username == null || username === '' ) {
+        console.log(clc.red('Username error.'))
 		res.status(422).json({
 			'error': 'usernameError'
 		}).end()
@@ -36,6 +39,7 @@ router.post('/', (req, res, next) => {
 		.exec()
 		.then(data => {
 			if (data) {
+                console.log(clc.red('Username or email exists.'))
 				res.status(422).json({
 					'error': 'usernameOrEmailExistsError'
 				}).end()
@@ -43,6 +47,7 @@ router.post('/', (req, res, next) => {
 				// If username or email is not used
 				bcrypt.hash(password, 10, (err, password) => {
 					if ( err ) {
+                        console.log(clc.red('Error while encrypting data. Please try again later.'))
 						res.status(500).json({
 							'msg': 'Error while encrypting data. Please try again later.'
 						})
@@ -50,7 +55,7 @@ router.post('/', (req, res, next) => {
 						const user = new User({ email, username, password })
 						user.save()
 						.then(() => {
-                            console.log(clc.red(username) + clc.green(' successfuly registered'))
+                            console.log(clc.blue(username) + clc.green(' successfuly registered'))
 							res.status(200).json({
 								'msg': 'Data entered successfuly.'
 							}).end()
