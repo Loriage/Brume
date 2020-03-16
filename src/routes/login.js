@@ -33,7 +33,7 @@ router.post('/', (req, res, next) => {
 			bcrypt.compare(password, data.password, (err, result) => {
 				console.log(result)
 				if (result) {
-					// Data to be provided with token					
+					// Data to be provided with token
 					const payLoad = {
 						'email': data.email,
 						'username': data.username
@@ -57,7 +57,7 @@ router.post('/', (req, res, next) => {
 						'msg': 'Authentication failed'
 					}).end()
 				}
-			})			
+			})
 		})
 		.catch(e => {
 			console.log(e)

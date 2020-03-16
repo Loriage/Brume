@@ -9,6 +9,5 @@ const UserSchema = new Schema({
 	password: { type: String },
 })
 
-
 // Export model
 module.exports = mongoose.model('users', UserSchema)
