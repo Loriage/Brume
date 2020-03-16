@@ -35,6 +35,7 @@ const register = require('./src/routes/register')
 // Use routes
 app.use('/login', login)
 app.use('/register', register)
+app.use('/oauth', oauth)
 
 // Listen for the server at a port.
 app.listen(process.env.PORT || 8000, (err) => {
