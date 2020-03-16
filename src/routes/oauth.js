@@ -4,10 +4,10 @@ const clc = require('cli-color')
 const passport = require('../middleware/passport')
 
 router.get('/dropbox',
-    passport.authenticate('dropbox-oauth2'));
+    passport.authenticate('dropbox'));
 
 router.get('/dropbox/callback',
-    passport.authenticate('dropbox-oauth2', {
+    passport.authenticate('dropbox', {
         failureRedirect: '/login'
     }),
     function (req, res) {
