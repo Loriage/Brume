@@ -57,7 +57,7 @@ router.post('/', (req, res, next) => {
 						'auth_token': token
 					})
 				} else {
-                    console.log(clc.red('Authentication failed')
+                    console.log(clc.red('Authentication failed'))
 					res.status(401).json({
 						'msg': 'Authentication failed'
 					}).end()
