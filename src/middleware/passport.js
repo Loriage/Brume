@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const User = require('../db/models/User')
 var passport = require('passport');
 var DropboxStrategy = require('passport-dropbox-auth').Strategy;
-require("dotenv").config();
+require("dotenv").config({ path: '../'});
 
 passport.use(new DropboxStrategy({
         apiVersion: '2',
