@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const clc = require('cli-color')
+const passport = require('../middleware/passport')
 
 router.get('/dropbox',
     passport.authenticate('dropbox-oauth2'));
