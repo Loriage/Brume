@@ -31,6 +31,7 @@ app.use(function (req, res, next) {
 // Import routes
 const login = require('./src/routes/login')
 const register = require('./src/routes/register')
+const oauth = require('./src/routes/oauth')
 
 // Use routes
 app.use('/login', login)
