@@ -11,11 +11,11 @@ passport.use(new DropboxStrategy({
         callbackURL: "https://brume-tool.herokuapp.com/oauth/dropbox/callback"
     },
     function (accessToken, refreshToken, profile, done) {
-        User.findOrCreate({
-            providerId: profile.id
-        }, function (err, user) {
-            return done(err, user);
-        });
+        // User.findOrCreate({
+        //     providerId: profile.id
+        // }, function (err, user) {
+        //     return done(err, user);
+        // });
     }
 ));
 
