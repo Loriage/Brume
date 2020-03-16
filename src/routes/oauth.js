@@ -3,6 +3,7 @@ const router = express.Router()
 const clc = require('cli-color')
 const passport = require('../middleware/passport')
 
+router.use(passport.initialize());
 router.get('/dropbox',
     passport.authenticate('dropbox'));
 
