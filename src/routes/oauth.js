@@ -2,10 +2,10 @@ const express = require('express')
 const router = express.Router()
 const clc = require('cli-color')
 
-app.get('/dropbox',
+router.get('/dropbox',
     passport.authenticate('dropbox-oauth2'));
 
-app.get('/dropbox/callback',
+router.get('/dropbox/callback',
     passport.authenticate('dropbox-oauth2', {
         failureRedirect: '/login'
     }),
