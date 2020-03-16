@@ -34,6 +34,9 @@ const register = require('./src/routes/register')
 const oauth = require('./src/routes/oauth')
 
 // Use routes
+app.get('/', function(req, res) {
+    res.send('Welcome to Brume Tool API');
+})
 app.use('/login', login)
 app.use('/register', register)
 app.use('/oauth', oauth)
