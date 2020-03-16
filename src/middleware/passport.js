@@ -18,7 +18,7 @@ passport.use(new DropboxStrategy({
     apiVersion: '2',
     clientID: `${process.env.DROPBOX_CLIENT_ID}`,
     clientSecret: `${process.env.DROPBOX_CLIENT_SECRET}`,
-    callbackURL: "http://localhost:8000/oauth/dropbox/callback"
+    callbackURL: "https://brume-tool.herokuapp.com/oauth/dropbox/callback"
     },
     async (accessToken, refreshToken, profile, done) => {
         const email = profile.email;
