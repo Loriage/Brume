@@ -16,7 +16,7 @@
     "author": "Loriage",
     "license": "MIT",
     "dependencies": {
-        "bcrypt": "^3.0.8",
+        "bcrypt": "^5.0.0",
         "body-parser": "^1.18.3",
         "cli-color": "^2.0.0",
         "dotenv": "^6.2.0",
